@@ -1,10 +1,13 @@
 import "./GameOver.css";
 
-function GameOver({ retry }) {
+function GameOver({ retry, Score }) {
   return (
     <div>
-      <h1>GameOver</h1>
-      <button onClick={retry}>Tentar novamente</button>
+      <h1>Fim de jogo</h1>
+      <h2>
+        A sua pontuanção foi: <span>{Score}</span>
+      </h2>
+      <button onClick={retry}>Resetar jogo</button>
     </div>
   );
 }

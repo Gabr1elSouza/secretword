@@ -91,14 +91,29 @@ function App() {
         ...actualWrongLetters,
         normalizedLetter,
       ]);
+      setGuesses((actualGuesses) => actualGuesses - 1);
     }
-
-    console.log(guessedLetters);
-    console.log(wrongLetters);
   };
+
+  function clearLetterStates() {
+    setGuessedLetters([]);
+    setWrongLetters([]);
+  }
+
+  useEffect(() => {
+    if (guesses <= 0) {
+      //reset all game
+      clearLetterStates();
+
+      setGameStage(stages[2].name);
+    }
+  }, [guesses]);
 
   //restart game
   const retry = () => {
+    setScore(0);
+    setGuesses(3);
+
     setGameStage(stages[0].name);
   };
 
@@ -117,7 +132,7 @@ function App() {
           Score={Score}
         />
       )}
-      {gameStage === "end" && <GameOver retry={retry} />}
+      {gameStage === "end" && <GameOver retry={retry} Score={Score} />}
     </div>
   );
 }
