@@ -3,7 +3,6 @@ import "./Game.css";
 
 function Game({
   verifyLetter,
-  pickedWord,
   pickedCategory,
   letters,
   guessedLetters,

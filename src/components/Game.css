@@ -1,4 +1,4 @@
-.game h1 {
+.Game h1 {
   font-size: 2.5em;
 }
 
@@ -13,6 +13,7 @@
 .wordContainer {
   margin: 1.5em;
   padding: 1.5em;
+  justify-content: center;
   border: 20px solid #ecfa00;
   display: flex;
 }
@@ -46,4 +47,25 @@
   font-size: 2em;
   text-align: center;
   margin-right: 1em;
+}
+
+@media (max-width: 800px) {
+  .Game {
+    width: 75%;
+    margin: 0;
+  }
+  .wordContainer {
+    margin: 0.5em;
+    padding: 0.5em;
+    width: 90%;
+    display: flex;
+    right: auto;
+  }
+  .letter,
+  .blankSquare {
+    font-size: 30px;
+    height: 40px;
+    width: 80px;
+    margin-right: 5px;
+  }
 }
